@@ -1,0 +1,43 @@
+<div class="footer-container">
+    <div class="container py-5">
+      <div class="row gy-4">
+  
+        <div class="col-md-3">
+          <h6 class="text-uppercase fw-bold mb-4">Servicios</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-code-slash me-2"></i>Desarrollador web</li>
+            <li class="mb-2"><i class="bi bi-code-slash me-2"></i>Angular Developer</li>
+          </ul>
+        </div>
+  
+        <div class="col-md-3">
+          <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <a target="_blank" class="text-decoration-none">
+                <i class="bi bi-whatsapp me-2"></i>{{personalInfo.phone}}
+              </a>
+            </li>
+            <li class="mb-2">
+                <i class="bi bi-geo-alt-fill me-2"></i>{{personalInfo.location}}
+              </li>
+            <li class="mb-2">
+              <a href="{{personalInfo.linkedin}}" target="_blank" class="text-decoration-none">
+                <i class="bi bi-linkedin me-2"></i>{{personalInfo.linkedinUser}}
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="mailto:{{personalInfo.email}}" class="text-decoration-none">
+                <i class="bi bi-envelope-fill me-2"></i>{{personalInfo.email}}
+              </a>
+            </li>
+            <li class="mb-2">
+              <a href="{{personalInfo.gitHub}}" target="_blank" class="text-decoration-none">
+                <i class="bi bi-github me-2"></i>{{personalInfo.gitHubUser}}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>

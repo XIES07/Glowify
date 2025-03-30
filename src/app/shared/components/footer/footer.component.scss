@@ -1,0 +1,28 @@
+.footer-container {
+    background-color: #f8f9fa;
+    color: #333;
+  
+    a {
+      color: inherit;
+      transition: color 0.3s ease;
+  
+      &:hover {
+        color: #007bff;
+        text-decoration: none;
+      }
+    }
+  
+    .bi {
+      vertical-align: middle;
+    }
+  
+    ul {
+      padding-left: 0;
+    }
+  
+    li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+  }

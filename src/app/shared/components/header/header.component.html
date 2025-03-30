@@ -1,0 +1,17 @@
+<div class="bg-header">
+    <nav class="navbar p-2" data-bs-theme="dark">
+      <div class="d-flex align-items-center ms-4">
+        <button (click)="routeNavigate('Home')" class="btn btn-icon ms-4" aria-label="Show Sidebar">Home</button>
+        <button (click)="routeNavigate('Products')" class="btn btn-icon ms-4" aria-label="Hide Sidebar">Products</button>
+      </div>
+  
+      <div class="d-flex align-items-center">
+        <button (click)="routeNavigate('Likes')" class="btn btn-icon me-4" aria-label="Favorites">
+          <i class="bi bi-heart h-element"></i>
+        </button>
+        <button (click)="routeNavigate('ShoppingCart')" class="btn btn-icon me-4" aria-label="Shopping Cart">
+          <i class="bi bi-cart4 h-element"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
