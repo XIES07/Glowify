@@ -14,12 +14,14 @@
           <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
           <ul class="list-unstyled">
             <li class="mb-2">
-              <a target="_blank" class="text-decoration-none">
+              <a [href]="'http://wa.me/573137854717'" target="_blank" class="text-decoration-none">
                 <i class="bi bi-whatsapp me-2"></i>{{personalInfo.phone}}
               </a>
             </li>
             <li class="mb-2">
+              <a target="_blank" class="text-decoration-none" [href]="'https://www.google.com/maps/place/La+Ceja,+Antioquia/@6.027632,-75.4315966,15z/data=!3m1!4b1!4m6!3m5!1s0x8e469752ffcf9c09:0xaddcc0000c4e858!8m2!3d6.0298998!4d-75.4305712!16zL20vMDdodl80?entry=ttu&g_ep=EgoyMDI1MDQwMi4xIKXMDSoASAFQAw%3D%3D'">
                 <i class="bi bi-geo-alt-fill me-2"></i>{{personalInfo.location}}
+              </a>
               </li>
             <li class="mb-2">
               <a href="{{personalInfo.linkedin}}" target="_blank" class="text-decoration-none">
