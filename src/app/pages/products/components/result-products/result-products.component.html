@@ -1,0 +1,7 @@
+
+<div *ngIf="products.length === 0">
+    No hay categorías disponibles.
+  </div>
+<app-cards *ngIf="products.length > 0"
+[products]="products"
+></app-cards>
