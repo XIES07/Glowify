@@ -1,0 +1,33 @@
+<div class="card-container">
+    <div class="card shadow-sm" *ngFor="let item of products">
+      <!-- Imagen -->
+      <img [src]="item.images[0]" class="card-img-top" alt="{{ item.title }}" />
+  
+      <div class="card-body d-flex flex-column">
+        <!-- Título -->
+        <h5 class="card-title">{{ item.title }}</h5>
+  
+        <!-- Precio -->
+        <p class="card-text text-primary fw-bold">${{ item.price.toFixed(2) }}</p>
+  
+        <!-- Descripción (con límite de caracteres) -->
+        <p class="card-text text-muted">
+          {{ item.description | slice:0:100 }}...
+          <a href="#" class="text-decoration-none">Ver más</a>
+        </p>
+  
+        <!-- Acciones -->
+        <div class="mt-auto d-flex justify-content-between align-items-center">
+          <!-- Botón de Like -->
+          <button class="btn btn-outline-danger rounded-circle p-2">
+            <i class="bi bi-heart"></i>
+          </button>
+  
+          <!-- Botón de Agregar al Carrito -->
+          <button class="btn btn-primary rounded-pill px-4">
+            <i class="bi bi-cart-plus me-2"></i> Agregar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

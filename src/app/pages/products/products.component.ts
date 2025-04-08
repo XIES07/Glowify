@@ -1,3 +1,4 @@
+import { ProductsService } from './../../shared/services/products.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,10 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent {
-
-  constructor() { }
+  
+  constructor(private productsService:ProductsService) { }
 
   ngOnInit() {
   }
+
 
 }

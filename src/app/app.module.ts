@@ -10,6 +10,9 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { LikesComponent } from './pages/likes/likes.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { ResultProductsComponent } from './pages/products/components/result-products/result-products.component';
+import { SearchEngineProductsComponent } from './pages/products/components/search-engine-products/search-engine-products.component';
+import { FormsModule } from '@angular/forms';
 
 const components = [
     AppComponent,
@@ -18,6 +21,8 @@ const components = [
     ProductsComponent,
     LikesComponent,
     ShoppingCartComponent,
+    ResultProductsComponent,
+    SearchEngineProductsComponent,
 ]
 
 @NgModule({
@@ -28,7 +33,8 @@ const components = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

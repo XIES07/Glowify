@@ -1,0 +1,31 @@
+<div class="container search-engine-container">
+    <!-- Navbar para Categorías -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light rounded shadow-sm mb-4">
+      <span class="navbar-brand">Categorías</span>
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#categoryNavbar"
+          aria-controls="categoryNavbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="categoryNavbar">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 overflow-auto">
+            <li class="nav-item">
+              <a class="nav-link active" (click)="selectCategory('')">Todas las categorías</a>
+            </li>
+            <li class="nav-item" *ngFor="let category of categories">
+              <a class="nav-link" (click)="selectCategory(category.slug)">{{ category.name }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    
+  </div>
