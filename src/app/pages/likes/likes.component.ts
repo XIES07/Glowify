@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { AppState } from '../../shared/ngrx/app-state';
+import { Store } from '@ngrx/store';
+import { selectGlobal } from '../../shared/ngrx/selectors';
 
 @Component({
   selector: 'app-likes',
@@ -7,9 +10,12 @@ import { Component } from '@angular/core';
 })
 export class LikesComponent {
 
-  constructor() { }
+  constructor(private store:Store<AppState>) { }
 
   ngOnInit() {
+    this.store.select(selectGlobal).subscribe((state) => {
+      console.log('state', state.likes);
+    } );
   }
 
 }
