@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../shared/ngrx/app-state';
+import { selectGlobal } from '../../shared/ngrx/selectors';
 
 @Component({
   selector: 'app-shopping-cart',
@@ -7,9 +10,12 @@ import { Component } from '@angular/core';
 })
 export class ShoppingCartComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+    constructor(private store:Store<AppState>) { }
+  
+    ngOnInit() {
+      this.store.select(selectGlobal).subscribe((state) => {
+        console.log('state', state.shoppingCart);
+      } );
+    }
 
 }
