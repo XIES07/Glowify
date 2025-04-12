@@ -12,9 +12,11 @@ export class LikesComponent {
 
   constructor(private store:Store<AppState>) { }
 
+  products: any
+
   ngOnInit() {
     this.store.select(selectGlobal).subscribe((state) => {
-      console.log('state', state.likes);
+      this.products = state.likes;
     } );
   }
 
