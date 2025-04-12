@@ -1,1 +1,10 @@
-<p>ShoppingCart works!</p>
+<section class="body-section">
+
+    <div *ngIf="products.length === 0">
+        No hay Productos disponibles.
+      </div>
+    <app-cards *ngIf="products.length > 0"
+    [products]="products"
+    [isCartShoppingPage]="true"
+    ></app-cards>
+</section>

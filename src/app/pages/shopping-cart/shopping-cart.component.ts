@@ -12,9 +12,11 @@ export class ShoppingCartComponent {
 
     constructor(private store:Store<AppState>) { }
   
-    ngOnInit() {
+  products: any
+
+  ngOnInit() {
       this.store.select(selectGlobal).subscribe((state) => {
-        console.log('state', state.shoppingCart);
+        this.products = state.shoppingCart;
       } );
     }
 
