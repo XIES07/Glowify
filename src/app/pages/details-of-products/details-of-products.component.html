@@ -1,1 +1,48 @@
-<p>footer works!</p>
+<div class="product-details-container" *ngIf="product">
+    <div class="product-image">
+      <img [src]="product.thumbnail" alt="{{ product.title }}" />
+    </div>
+  
+    <div class="product-info">
+      <h1>{{ product.title }}</h1>
+      <p class="product-description">{{ product.description }}</p>
+  
+      <div class="product-price">
+        <span class="price">${{ product.price }}</span>
+        <span class="discount" *ngIf="product.discountPercentage > 0">
+          ({{ product.discountPercentage }}% off)
+        </span>
+      </div>
+      <p class="availability">
+        Availability: <strong>{{ product.availabilityStatus }}</strong>
+      </p>
+  
+      <div class="product-meta">
+        <p><strong>Category:</strong> {{ product.category }}</p>
+        <p><strong>Brand:</strong> {{ product.brand }}</p>
+      </div>
+  
+      <div class="product-dimensions">
+        <p><strong>Dimensions:</strong> {{ product.dimensions.width }} x {{ product.dimensions.height }} x {{ product.dimensions.depth }} cm</p>
+        <p><strong>Weight:</strong> {{ product.weight }} kg</p>
+      </div>
+  
+      <div class="product-policies">
+        <p><strong>Shipping:</strong> {{ product.shippingInformation }}</p>
+        <p><strong>Return Policy:</strong> {{ product.returnPolicy }}</p>
+      </div>
+  
+      <div class="product-reviews">
+        <h2>Reviews ({{ product.reviews.length }})</h2>
+        <div class="review" *ngFor="let review of product.reviews">
+          <p><strong>{{ review.reviewerName }}</strong> - {{ review.rating }}/5</p>
+          <p>{{ review.comment }}</p>
+          <p class="review-date">{{ review.date | date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="no-data" *ngIf="!product">
+    <p>Loading product details...</p>
+  </div>

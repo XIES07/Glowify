@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { ProductsComponent } from './pages/products/products.component';
 import { LikesComponent } from './pages/likes/likes.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { DetailsOfProductsComponent } from './pages/details-of-products/details-of-products.component';
 
 export const routes: Routes = [
     {
@@ -26,6 +27,10 @@ export const routes: Routes = [
     {
         path: 'Likes',
         component: LikesComponent,
+    },
+    {
+        path: 'detailsOfProducts/:id',
+        component: DetailsOfProductsComponent,
     },
 ];
 

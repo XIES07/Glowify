@@ -5,11 +5,13 @@ import { Product } from '../../models/product.models';
 export interface GlobalState {
   likes: Product[];
   shoppingCart: Product[];
+  selectedProduct?: Product;
 }
 
 export const initialState: GlobalState = {
   likes: [],
   shoppingCart: [],
+  selectedProduct: undefined,
 };
 
 export const globalReducer = createReducer(
@@ -85,6 +87,16 @@ export const globalReducer = createReducer(
     return {
       ...state,
       shoppingCart: [],
+    };
+  }),
+  on(Actions.onProductSelectedToDetails, (state, { data }) => {
+    if (!data || typeof data !== 'object' || !data.id) {
+      return state;
+    }
+
+    return {
+      ...state,
+      selectedProduct: data,
     };
   })
 );
