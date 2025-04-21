@@ -28,3 +28,8 @@ export const onClearAllLikes = createAction(
 export const onClearAllShoppingCart = createAction(
   '[GlobalStore] Clear All Shopping Cart'
 );
+
+export const onProductSelectedToDetails = createAction(
+  '[GlobalStore] On Product Selected To Details',
+  props<{ data: Product }>()
+)

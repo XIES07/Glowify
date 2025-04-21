@@ -6,7 +6,9 @@ import {
   onProductAddedToShoppingCart,
   onProductDeletedToLike,
   onProductDeletedToShoppingCart,
+  onProductSelectedToDetails,
 } from '../../ngrx/actions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -20,7 +22,10 @@ export class CardsComponent {
 
   @Input() products: any;
 
-  constructor(private store: Store<AppState>) {}
+  constructor(
+    private store: Store<AppState>,
+    private router: Router
+  ) {}
 
   ngOnInit() {}
 
@@ -51,4 +56,10 @@ export class CardsComponent {
     }
     this.store.dispatch(onProductDeletedToShoppingCart({ data: { id: product.id } }));
   }
+
+  viewDetails(productId: string, data: any) {
+    this.store.dispatch(onProductSelectedToDetails({ data }));
+    this.router.navigate(['/detailsOfProducts', productId]);
+  }
+
 }
